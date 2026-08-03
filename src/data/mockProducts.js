@@ -1,0 +1,145 @@
+// Fallback catalog. Real data should live in Supabase's `products` table
+// (see supabase/schema.sql + supabase/seed.sql). This file lets the UI run
+// and be reviewed before a Supabase project is connected.
+
+export const collections = [
+  { slug: 'heritage', name: 'Heritage', tagline: 'Where the story began' },
+  { slug: 'obsidian', name: 'Obsidian', tagline: 'Modern minimalism, cased in black' },
+  { slug: 'meridian', name: 'Meridian', tagline: 'For those who chase the horizon' },
+  { slug: 'limited-edition', name: 'Limited Edition', tagline: 'Only 100 will ever exist' },
+];
+
+export const categories = [
+  { slug: 'automatic', name: 'Automatic' },
+  { slug: 'chronograph', name: 'Chronograph' },
+  { slug: 'skeleton', name: 'Skeleton' },
+  { slug: 'diver', name: 'Diver' },
+  { slug: 'dress', name: 'Dress' },
+];
+
+export const mockProducts = [
+  {
+    id: 'aet-001',
+    slug: 'aeternum-heritage-1959',
+    name: 'Heritage 1959',
+    collection: 'heritage',
+    category: 'dress',
+    price: 18500,
+    currency: 'USD',
+    isLimited: false,
+    isNew: false,
+    stock: 6,
+    movement: 'Automatic, in-house calibre A-12',
+    caseMaterial: '18k rose gold, 39mm',
+    waterResistance: '50m',
+    warranty: 'Lifetime mechanical warranty',
+    description:
+      'A faithful reissue of the 1959 dress watch that established the Aeternum name, finished by hand in the same atelier that built the original.',
+    rating: 4.9,
+    reviewCount: 128,
+  },
+  {
+    id: 'aet-002',
+    slug: 'aeternum-obsidian-carbon',
+    name: 'Obsidian Carbon',
+    collection: 'obsidian',
+    category: 'chronograph',
+    price: 24500,
+    currency: 'USD',
+    isLimited: false,
+    isNew: true,
+    stock: 11,
+    movement: 'Automatic chronograph, calibre A-9C',
+    caseMaterial: 'Forged carbon, 42mm',
+    waterResistance: '100m',
+    warranty: 'Lifetime mechanical warranty',
+    description:
+      'A monochrome chronograph built from forged carbon composite, designed for collectors who prefer their prestige understated.',
+    rating: 4.8,
+    reviewCount: 74,
+  },
+  {
+    id: 'aet-003',
+    slug: 'aeternum-meridian-gmt',
+    name: 'Meridian GMT',
+    collection: 'meridian',
+    category: 'automatic',
+    price: 21200,
+    currency: 'USD',
+    isLimited: false,
+    isNew: true,
+    stock: 15,
+    movement: 'Automatic GMT, calibre A-7T',
+    caseMaterial: 'Stainless steel, 40mm',
+    waterResistance: '100m',
+    warranty: 'Lifetime mechanical warranty',
+    description:
+      'Two time zones, one silhouette. The Meridian GMT was built for a life spent between continents.',
+    rating: 4.7,
+    reviewCount: 51,
+  },
+  {
+    id: 'aet-004',
+    slug: 'aeternum-skeleton-noir',
+    name: 'Skeleton Noir',
+    collection: 'obsidian',
+    category: 'skeleton',
+    price: 32800,
+    currency: 'USD',
+    isLimited: true,
+    isNew: false,
+    stock: 3,
+    movement: 'Hand-wound skeleton, calibre A-15S',
+    caseMaterial: 'DLC-coated titanium, 41mm',
+    waterResistance: '30m',
+    warranty: 'Lifetime mechanical warranty',
+    description:
+      'Every bridge and gear train exposed under sapphire, finished with black-polished bevels by a single watchmaker from start to finish.',
+    rating: 5.0,
+    reviewCount: 22,
+  },
+  {
+    id: 'aet-005',
+    slug: 'aeternum-deep-current',
+    name: 'Deep Current',
+    collection: 'meridian',
+    category: 'diver',
+    price: 15600,
+    currency: 'USD',
+    isLimited: false,
+    isNew: false,
+    stock: 20,
+    movement: 'Automatic, calibre A-4D',
+    caseMaterial: 'Titanium, 43mm',
+    waterResistance: '300m',
+    warranty: 'Lifetime mechanical warranty',
+    description:
+      'Rated to 300 metres and finished to the same standard as our dress collection — capability without compromise.',
+    rating: 4.6,
+    reviewCount: 89,
+  },
+  {
+    id: 'aet-006',
+    slug: 'aeternum-centennial-one-of-100',
+    name: 'Centennial — One of 100',
+    collection: 'limited-edition',
+    category: 'automatic',
+    price: 68000,
+    currency: 'USD',
+    isLimited: true,
+    isNew: true,
+    stock: 2,
+    movement: 'Automatic, calibre A-20 with 5-day power reserve',
+    caseMaterial: 'Platinum, 40mm',
+    waterResistance: '50m',
+    warranty: 'Lifetime mechanical warranty + provenance certificate',
+    description:
+      'Struck to mark a century of the Aeternum atelier. Each of the 100 pieces is individually numbered and accompanied by a hand-signed certificate of authenticity.',
+    rating: 5.0,
+    reviewCount: 9,
+  },
+];
+
+export function getProductBySlug(slug) {
+  return mockProducts.find((p) => p.slug === slug);
+}
