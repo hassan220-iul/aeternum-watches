@@ -1,0 +1,117 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+.site-header.is-scrolled {
+  background: rgba(5, 5, 5, 0.86);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--color-line);
+}
+
+.site-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+
+.site-header__logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-ivory);
+}
+
+.site-header__nav {
+  display: none;
+  gap: 2.25rem;
+}
+@media (min-width: 900px) {
+  .site-header__nav { display: flex; }
+}
+
+.site-header__link {
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(245, 242, 234, 0.75);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+.site-header__link::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 100%; bottom: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: right 0.35s var(--ease-luxury);
+}
+.site-header__link:hover, .site-header__link.is-active { color: var(--color-ivory); }
+.site-header__link:hover::after, .site-header__link.is-active::after { right: 0; }
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.site-header__icon {
+  position: relative;
+  color: var(--color-ivory);
+  display: inline-flex;
+}
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--color-gold);
+  color: var(--color-black);
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+}
+.site-header__burger span {
+  width: 20px;
+  height: 1px;
+  background: var(--color-ivory);
+}
+@media (min-width: 900px) {
+  .site-header__burger { display: none; }
+}
+
+.mobile-nav {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: rgba(5, 5, 5, 0.97);
+  border-bottom: 1px solid var(--color-line);
+}
+.mobile-nav a {
+  padding: 1rem clamp(1.25rem, 4vw, 3rem);
+  font-size: 0.85rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--color-ivory);
+}
